@@ -1,0 +1,689 @@
+/* Global Background */
+body {
+    background-color: white; /* Set background to white */
+    color: black; /* Ensure text is black */
+}
+
+/* Navigation bar */
+
+/* Navigation */
+/* Default transparent navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;  /* Initially transparent */
+    padding: 15px 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 50px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Background color when scrolled */
+.navbar-scrolled {
+    background: rgba(26, 26, 46, 0.9); /* Dark background with slight transparency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Adjust gap to your preference */
+    padding-right: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00AEEF;  /* Hover effect */
+}
+
+nav .portfolio-name {
+    font-size: 1.0rem; /* Slightly larger font for portfolio name */
+    color:#ddd;
+    padding-left: 70px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    background: url('intro4.jpeg') no-repeat center center/cover;
+    height: 80vh;
+    margin-top: 0; /* Remove top margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+}
+
+.header h1 {
+    font-family: 'Poppins', sans-serif; /* Or any other font */
+    font-weight: 800; /* Makes the font thicker */
+    font-size: 3rem; /* Adjust as needed */
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 1;
+}
+
+.header h2 {
+    font-family: 'Poppins', sans-serif; /* Or any other font */
+    font-weight: 600; /* Makes the font thicker */
+    color: #ff6347;
+    font-size: 1.3rem;
+    margin-top: -30px;
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 1;
+}
+
+.header img {
+    border-radius: 50%;
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid #1a1a2e; /* Reduced border size */
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1; /* Ensures image is above the overlay */
+}
+
+.header img:hover {
+    transform: scale(1.1); /* Enlarge the image slightly */
+}
+
+/* Social Icons - Half inside & Half outside */
+.header-social-icons {
+    position: absolute;
+    bottom: -30px; /* Moves icons slightly outside the header */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+/* Individual Social Icons */
+.header-social-icons a {
+    font-size: 25px;
+    color: white;
+    background: rgba(10, 10, 30, 0.85); /* Dark semi-transparent background */
+    padding: 15px;
+    border-radius: 90%; /* Circular background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.header-social-icons a:hover {
+    transform: scale(1.2);
+    color: #00acee;
+}
+
+/* Styling for the Resume Button */
+.highlight-button {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensure button is clickable */
+    position: relative;
+    z-index: 10; /* Ensure button is above other elements */
+}
+
+.highlight-button:hover {
+    background-color: #1a1a2e;
+    box-shadow: 0 0 15px rgba(0, 174, 239, 0.8);
+    transform: scale(1.05);
+}
+
+/* About Section */
+#about {
+    background-color: #d3d3d3; /* Light grey background */
+    color: rgb(13, 10, 162); /* Text color */
+    padding: 60px 20px;
+    text-align: left;
+    margin-top: 0;
+}
+
+/* About heading (h2) */
+#about h2 {
+    font-size: 1.8rem; /* Adjust the font size of the About heading */
+    margin-bottom: 10px; /* Reduce space below the heading */
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px; 
+    margin: auto;
+    background: white;  /* Set background color here */
+    border-radius: 10px;
+    padding: 40px;
+    gap: 30px; /* This ensures space between both sections */
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns both headings at the top */
+}
+
+.about-box, .info-box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;  /* Ensure these sections are white */
+    color: black;
+}
+
+/* This makes sure both headings (About & Basic Information) are aligned horizontally */
+.section-title {
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin: 0;
+    display: inline-block; /* Aligns them horizontally */
+    padding-left: 5px; /* Adds space between title and content */
+}
+
+/* Adjust the text size and alignment for the About Text and List */
+.about-text {
+    font-size: 1.0rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    padding-left: 20px; /* Adds consistent indentation for the list */
+    flex: 1 1 60%; /* Adjusts width */
+    color: #1a1a2e;
+}
+
+ul {
+    list-style-type: disc; /* You can choose your preferred style */
+    padding-left: 20px; /* Add padding to the left for bullets */
+    margin-top: 0;  /* Remove top margin to reduce space between heading and list */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+ul li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+.about-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    flex: 1 1 40%; /* Adjusts the space taken by the list */
+}
+
+.about-list li {
+    line-height: 0.5; /* Adjusts the line height within each list item */
+}
+
+.info-box h3 {
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+    text-align: left;  /* Add this line to align to the left */
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    color: #1a1a2e;
+}
+
+.info-box li {
+    font-size: 1rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start; /* Aligns the label and value at the start */
+    margin-bottom: 20px;
+}
+
+/* Date of Birth - Custom spacing */
+.info-box li:nth-child(1) strong {
+    margin-right: 85px; /* Adds more space between label and value */
+}
+
+/* Email - Custom spacing */
+.info-box li:nth-child(2) strong {
+    margin-right: 155px; /* Adds more space for email */
+}
+
+/* Phone - Custom spacing */
+.info-box li:nth-child(3) strong {
+    margin-right: 150px; /* Adds more space for phone */
+}
+
+/* Address - Custom spacing */
+.info-box li:nth-child(4) strong {
+    margin-right: 130px; /* Less space between label and value */
+}
+
+/* Languages - Custom spacing */
+.info-box li:nth-child(5) strong {
+    margin-right: 105px; /* Custom spacing for languages */
+}
+
+.info-box a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+footer p {
+    color: #1a1a2e;
+    font-size: 1rem;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode nav {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .about-container,
+body.light-mode .info-box {
+    background-color: #f9f9f9;
+}
+
+body.light-mode .card {
+    background-color: #f9f9f9;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6347; /* Highlight color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Work Experience Section */
+#experience {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Timeline item */
+.timeline-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for job titles and company */
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: #ff6347;
+    margin-top: 5px;
+}
+
+.date {
+    font-size: 1rem;
+    color: #777;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.skill i {
+    font-size: 1.8rem;
+    margin-right: 10px;
+    color: #1a1a2e;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #1a1a2e, #0077b6);
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: width 1s ease-in-out;
+}
+
+.education-section {
+    background-color: #f4f4f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.education-card {
+    background-color: #fff;
+    width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.education-card-header {
+    margin-bottom: 15px;
+}
+
+.education-card-header h3 {
+    font-size: 1.5rem;
+    color: #4A90E2;
+}
+
+.education-card-header p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.education-card-body p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Animation effect when card is visible */
+.education-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Container for contact box */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Styling for the contact box */
+.contact-box {
+    background-color: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animation when contact box becomes visible */
+.contact-box.show-contact {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form styling */
+.contact-box form {
+    width: 100%;
+}
+
+/* Input fields styling */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #5e72e4;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4a61c3;
+}
+
+/* Projects Section */
+#projects {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.project-card p {
+    color: #555;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.project-card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.project-card .btn:hover {
+    background-color: #0056b3;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Show animation */
+.show-project {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Mobile responsive styling */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
